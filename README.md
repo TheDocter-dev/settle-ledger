@@ -35,3 +35,24 @@ See `METHOD.md`. Independent re-verification of any row: pull the named wheel fr
 ## Citing
 
 Link the row file directly, e.g. `releases/2.22.0.md`. Each row is a permanent commit on an append-only branch.
+
+## Signing key
+
+Ledger entries and assessment anchors are signed with the Settle Ledger key:
+
+```
+ed25519  3C15C334 A2063681 67FB90C8 5324071C CD3C0642
+Created 17 Sep 2026, expires 2028-09-16.
+```
+
+Verify any signed anchor: `gpg --verify <file>.asc`. If this key is ever rotated, the rotation notice is itself signed by the old key and committed here before the new key signs anything.
+
+## Assessment anchors
+
+`anchors/` holds the hash anchors for Settle conformance assessment reports — one entry per assessment, committed BEFORE or AT the report's publication, each with an OpenTimestamps proof (`.ots`) committed beside it so the hash's existence is anchored in Bitcoin independently of GitHub.
+
+- `anchors/002-pre-registration.md` — 002 (x402-rs) predictions locked before execution (committed 17 Sep, before first probe)
+
+## Licence
+
+Ledger entries and anchors: CC-BY-4.0 (see LICENSE).
