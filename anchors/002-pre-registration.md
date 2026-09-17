@@ -7,23 +7,37 @@
 
 ## Anchor
 
-SHA-256 of the pre-registration document:9de15c587fa2957b746eeeb9ff487a1b8406c43268ff3fd6ffb2bf6ea6675b10
+SHA-256 of the pre-registration document:
+
+```
+9de15c587fa2957b746eeeb9ff487a1b8406c43268ff3fd6ffb2bf6ea6675b10
+```
 
 ## Signed attestation
 
-Clearsigned with the Settle Ledger key — fingerprint:3C15C334 A2063681 67FB90C8 5324071C CD3C0642
+Clearsigned with the Settle Ledger key — fingerprint:
+
+```
+3C15C334 A2063681 67FB90C8 5324071C CD3C0642
+```
 
 (ed25519, created 17 Sep 2026, expires 2028-09-16.)
 
-Attestation stored as `anchors/002-prereg-signed.txt` (verbatim):-----BEGIN PGP SIGNED MESSAGE-----
+Attestation stored as `anchors/002-prereg-signed.txt` (verbatim):
+
+```
+-----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
+
 9de15c587fa2957b746eeeb9ff487a1b8406c43268ff3fd6ffb2bf6ea6675b10  002-pre-registration-PREDICTIONS.md
 -----BEGIN PGP SIGNATURE-----
+
 iHUEARYKAB0WIQQ8FcM0ogY2gWf7kMhTJAcczTwGQgUCaqtJTgAKCRBTJAcczTwG
 QgGhAQDNkze3cs7eDJqpANvE6fNdY0Y6v68GD5CoEfL0R+CtZQD/XNzUnJGIIr6P
 h0toxL8N9OWQ1Dv7NzEyu2gQ7aonFQA=
 =TYd6
 -----END PGP SIGNATURE-----
+```
 
 ## Commit ordering
 
