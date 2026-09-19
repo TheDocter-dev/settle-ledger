@@ -1,10 +1,10 @@
 # anchor-001 — Settle Freeze Anchor
 
-**Date:** 20 Sep 2026 (freeze day, moved up one day with buffer; publication still 22 Sep)
+**Date:** 19 Sep 2026 (freeze day, afternoon MYT; publication still 22 Sep)
 **Repo:** settle-ledger (live since 15 Sep 2026) — `anchors/001/`, signed commit on protected `main` by the existing Ledger key (ed25519, 3C15C334…CD3C0642)
 **Numbering:** anchor numbers follow assessment numbers, not commit order — anchors/002-pre-registration.md was committed first by design (pre-registration before execution); 001 is the freeze anchor for the first publication package.
-**Commit:** [recorded at execution]
-**OTS proof:** anchor-001.ots + anchor-001-commit.txt.ots — stamped evening of 20 Sep; upgraded on Bitcoin confirmation; commit-hash proof binds the OTS attestation to the git tree, not just the sums file.
+**Commit:** 12bf15ff8f304a704a0213462d4d09db0802c82f
+**OTS proof:** SHA256SUMS.ots + anchor-001-commit.txt.ots — stamped afternoon of 19 Sep (MYT); upgraded on Bitcoin confirmation; commit-hash proof binds the OTS attestation to the git tree, not just the sums file.
 
 ## What this anchor establishes
 
@@ -48,4 +48,5 @@ Catalog state files, the internal accuracy record, cluster/batch address mapping
 - 17 Sep 2026: SECURITY.md, signing-key block, LICENSE, 002-pre-registration committed and verified.
 - 18 Sep 2026: artifacts 7 and 8 finalized; artifact 7 independently recomputed from a separately transferred copy.
 - 19 Sep 2026: GitHub key registration completed; retroactive Verified across history. Consistency gate PASS (4 governing docs, 0 mismatches).
-- 20 Sep 2026: report v1.0 date inserted (22 September 2026); final sha256 25146292…e5fb (intermediate hash superseded by the Appendix-B hash-completeness fix — caught by the consistency gate). SHA256SUMS finalized (all 10 rows). Freeze executed this evening.
+- 19 Sep 2026: report v1.0 date inserted (22 September 2026); final sha256 25146292…e5fb (intermediate hash superseded by the Appendix-B hash-completeness fix — caught by the consistency gate). SHA256SUMS finalized (all 10 rows). Freeze executed this afternoon (MYT).
+- 19 Sep 2026 (001a correction): freeze-date labels corrected from 20 Sep to 19 Sep — freeze actually executed afternoon MYT 19 Sep (UTC+8); commit messages of 12bf15f and 0646e35 retain the 20 Sep mislabel (immutable); SHA256SUMS and both OTS proofs carry no dates and are unaffected.
