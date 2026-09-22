@@ -8,9 +8,9 @@ anchored the plan; this file records the execution.
 1. Tyler Moore (tyler-moore@utulsa.edu) — SENT 15:22
 2. Steven Murdoch (s.murdoch@ucl.ac.uk) — SENT 15:24
 3. Nicolas Christin (nicolasc@andrew.cmu.edu) — SENT 15:33 (tier-2: Ripple/SBI, disclosed)
-4. Ian Miers (imiers@umd.edu) — BOUNCED 15:38: 550 #5.7.1 "Your access to submit
-   messages to this e-mail system has been rejected" (recipient-side, UMD).
-   Retry + alternate-address lookup pending. (tier-2: Aleo, disclosed)
+4. Ian Miers — BOUNCED 15:38 to imiers@umd.edu: 550 #5.7.1 (recipient-side, UMD).
+   RETRIED 16:46 to imiers@cs.umd.edu (dept mail system) — result pending.
+   (tier-2: Aleo, disclosed)
 5. Rainer Böhme (rainer.boehme@uibk.ac.at) — SENT 15:40
 6. Alice Hutchings (alice.hutchings@cl.cam.ac.uk) — SENT 15:44
 
