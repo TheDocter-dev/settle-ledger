@@ -6,7 +6,7 @@ PyPI attests what each wheel is (signed provenance, linked in every row). This l
 
 ## What each row contains
 
-Every release gets a row in `releases/`, within 24 hours of the release appearing on PyPI. Fixed schema, no free text:
+Every release gets a row in `releases/`, currently detected by manual check and logged within 24 hours of detection; a daily automated poll of the PyPI release list is planned by 30 September 2026. Last manual check: 2026-09-22. Fixed schema, no free text:
 
 - `artifact_date` — when PyPI published the wheel
 - `logged_at` — when we verified and recorded it (these differ on retroactive rows; the gap is stated, never hidden)

@@ -22,7 +22,7 @@ The x402 Python SDK ships exactly two HTTP middleware adapters (Flask, FastAPI).
 
 ## Cadence and the 24-hour rule
 
-New releases are diffed and rowed within 24 hours of appearing on PyPI. If verification cannot complete in that window, a row is committed with `status: pending — not yet verified` and updated in place (new commit) when done. A missing row is a process failure; a pending row is an honest one.
+**Release feed (automation planned).** New x402 releases on PyPI are currently detected by manual check and logged within 24 hours of detection. A daily automated poll of the PyPI release list is planned by 30 September 2026; until then, absence of a row means no release was detected at the last manual check, whose date is recorded in the feed. If verification cannot complete in that window, a row is committed with `status: pending — not yet verified` and updated in place (new commit) when done. A missing row is a process failure; a pending row is an honest one.
 
 ## Guardrails (mechanical, not aspirational)
 
