@@ -23,3 +23,7 @@ A reader who encounters the report's hash before publication should understand: 
 ## Chain
 
 Anchored after 001/001a. Custody chain for bench evidence: cd7a2f3 -> c04679c -> cc8bdc0 -> 99f62f1.
+
+## Hash-stability note (added 26 Sep, same day as anchor)
+
+This anchor records report hash 9b6a456d of the 26 Sep freeze text. That text's section 6 disclosure attempt record carries dated placeholders (bounce confirmation date, X DM reply status, further attempts). The published text will therefore differ from the anchored bytes — exactly and only in section 6's filled attempt record — and the filled version will be anchored as 002a at publication, with the diff limited to that section. A reader who finds the hash before publication should not expect the published file to hash-match: the anchor proves the findings existed on 26 Sep; the 002a diff proves what changed.
