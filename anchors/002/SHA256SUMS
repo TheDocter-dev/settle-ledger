@@ -1,0 +1,6 @@
+9b6a456dc6612863147bfe1d92e9c5788d710b110d4c8199c0e1fb215ca26e3b  002-report.md
+e1f994231b0f2cf628e20617ad8e0ff9b757fbecd3743380d80011a1fe098567  002-scoring-sheet.md
+9de15c587fa2957b746eeeb9ff487a1b8406c43268ff3fd6ffb2bf6ea6675b10  002-pre-registration.md
+f0c878c8fd562f220338a8f8dc05f9be91f1d8b355513a464ce04d2276b8af6e  002-disclosure-mechanism-corrected.md
+e027fad86ca7a7ddcea3b1ee8154887e201ad5b15315775809bb874101d2a08e  002-audit.json
+# 002-audit.json = audit-002-payer.json, hash verified on-box (VPS) 26 Sep 2026; artifact held in private evidence repo, custody chain cd7a2f3 -> c04679c -> cc8bdc0 -> 99f62f1 (TheDocter-dev/settle-evidence)
