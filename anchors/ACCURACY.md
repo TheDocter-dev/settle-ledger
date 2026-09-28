@@ -18,3 +18,9 @@ Format: date filed · claim · surface that caught it · disposition.
 5. 001 "misreported reason" claim — facilitator was correct; caught by isolation probes.
 6. Ledger-procedure content reviewed before its premise (git init on existing repo); caught by 17 Sep status.
 7. 22 Sep pre-staged accuracy entries — correct outcome but record-over-surface until pointers landed.
+
+## 28 Sep 2026
+
+8. Checklist register listed "coinbase/x402" for issues #3465/#3471; correct repo is x402-foundation/x402. Caught during reviewer read prep, self-caught before any execution against the wrong register. Disposition: register corrected; all PR/issue references re-verified against the x402-foundation org repo.
+9. PR #3471 rebase plan did not account for the repo's verified-signatures gate: the original commits were GitHub-web-signed and a local rebase left them unsigned; first force-push (4841ffd0) went public unsigned and triggered the repo's unverified gate. Corrected per reviewer ruling: dedicated contributor GPG key generated on the signing host, four commits re-signed and re-pushed (954fe97b). Sub-fault: first signing pass amended committer to root@srv1929364.hstgr.cloud (repo-local git identity absent in fresh clone); caught by verify-before-push, corrected before the public push. Both sub-faults pre-empted by the same discipline: verify signatures and committer metadata before push.
+10. Reviewer handoff claim "VPS holds no signing keys by design" — premise wrong; the Ledger secret key is resident on the VPS (signing host per policy v5) and the 26–27 Sep anchor signing ran there. Record-over-surface class, filed against the reviewer. Disposition: key-hygiene rulings now state the actual posture; existence table records both keys' backup postures.
