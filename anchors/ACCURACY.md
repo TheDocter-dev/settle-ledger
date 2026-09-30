@@ -33,3 +33,13 @@ not by a reader. Corrected the same day: 24 pending rows added in commit
 0be07ab; detection automated going forward. Gap was visibility, not
 falsification: no row ever claimed coverage it didn't have; the README
 sentence was the inaccurate artifact.
+
+## Entry 12 — 2026-09-30 — Dormancy banner not activated on committed date
+The independence policy committed the automated dormancy banner to activate
+30 September 2026. Not activated on that date: the only implementation path
+then designed (a job pushing to the hub repo) was ruled out on key-hygiene
+grounds (unattended push = stored credential that can publish as Settle).
+Mechanism redesigned same day (Fable ruling): scheduled GitHub Pages rebuild
+keyed on the age of the newest signed Ledger commit (not the liveness feed,
+which can emit unattended), no commits, no stored credentials. New activation
+target: 3 October 2026. Miss logged on the date it was due, not discovered later.
