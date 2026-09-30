@@ -24,3 +24,12 @@ Format: date filed · claim · surface that caught it · disposition.
 8. Checklist register listed "coinbase/x402" for issues #3465/#3471; correct repo is x402-foundation/x402. Caught during reviewer read prep, self-caught before any execution against the wrong register. Disposition: register corrected; all PR/issue references re-verified against the x402-foundation org repo.
 9. PR #3471 rebase plan did not account for the repo's verified-signatures gate: the original commits were GitHub-web-signed and a local rebase left them unsigned; first force-push (4841ffd0) went public unsigned and triggered the repo's unverified gate. Corrected per reviewer ruling: dedicated contributor GPG key generated on the signing host, four commits re-signed and re-pushed (954fe97b). Sub-fault: first signing pass amended committer to root@srv1929364.hstgr.cloud (repo-local git identity absent in fresh clone); caught by the verify-before-push control, not by chance — corrected before the public push. Both sub-faults pre-empted by the same discipline: verify signatures and committer metadata before push.
 10. Reviewer handoff claim "VPS holds no signing keys by design" — premise wrong; the Ledger secret key is resident on the VPS (signing host per policy v5) and the 26–27 Sep anchor signing ran there. Record-over-surface class, filed against the reviewer. Disposition: key-hygiene rulings now state the actual posture; existence table records both keys' backup postures.
+
+## Entry 11 — 2026-09-30 — Ledger feed coverage gap, caught by first automated run
+The README declared "every release gets a row" while the feed held 12 rows
+against 36 published releases (12 of 36) — untrue for the two weeks the feed
+was live. Caught by the first automated poll run (poll-pypi.py, 2026-09-30),
+not by a reader. Corrected the same day: 24 pending rows added in commit
+0be07ab; detection automated going forward. Gap was visibility, not
+falsification: no row ever claimed coverage it didn't have; the README
+sentence was the inaccurate artifact.

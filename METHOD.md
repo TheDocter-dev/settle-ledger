@@ -38,3 +38,9 @@ The x402 Python SDK ships exactly two HTTP middleware adapters (Flask, FastAPI).
 3. Unzip; open the cited file at the cited line; read the gate condition.
 
 If any row fails this check, open an issue on this repository — a wrong row is a defect, and correcting it publicly is the design.
+
+## Row lifecycle
+Rows are created automatically on detection (poll-pypi.py, daily) with the
+automatable fields filled from index metadata. The settle-gate verdict is
+manual. `status: pending — not yet verified` means not yet examined — it does
+not mean verified clean.
