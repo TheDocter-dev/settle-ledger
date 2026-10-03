@@ -43,3 +43,53 @@ Mechanism redesigned same day (Fable ruling): scheduled GitHub Pages rebuild
 keyed on the age of the newest signed Ledger commit (not the liveness feed,
 which can emit unattended), no commits, no stored credentials. New activation
 target: 3 October 2026. Miss logged on the date it was due, not discovered later.
+
+## Entry 12 close — 2026-10-03
+
+Banner mechanism first live run: 2026-10-02T08:58:26Z (dormancy-banner workflow
+on settle-site, conclusion success). Site source is GitHub Actions; dormancy
+signal = age of newest signed Ledger commit on settle-ledger, read via public
+API; banner injected at edge if > 30 days; no stored credentials, no commits.
+Entry 12 closed.
+
+## Entry 13 — 2026-10-03: apex settleverify.com not serving (2026-09-30 to 2026-10-03)
+
+What happened: switching the site repository to the GitHub Actions source on
+30 Sep broke serving of the apex. From 30 Sep to 2 Oct, https://settleverify.com/
+failed at the TLS handshake (connection reset; no certificate offered). Only
+www.settleverify.com served. All nine reviewer-recruitment email signatures
+point at the bare domain. The 24 Sep checklist claim "apex live, 7/7" remains
+true for 24 Sep — the 30 Sep switch broke it afterwards.
+
+Why it was invisible for ~2 days: the post-deploy gate compared deployed bytes
+against the previous deploy. It checked content, not hostnames. www passed, so
+the gate passed. The framing error is in the gate, not the 24 Sep record.
+
+Diagnosis (2 Oct): GitHub Pages had no vhost for the apex — the TLS reset
+occurred before any certificate was offered. Pages settings showed
+NotServedByPagesError; the DNS check never passed for the apex despite correct
+A records (four 185.199.x.x, no AAAA, no CAA blocking issuance). The documented
+Remove/re-add cycle was executed once; the check still failed at the one-hour
+mark.
+
+Resolution (2026-10-03 ~05:24 UTC): custom domain restored to
+www.settleverify.com (GitHub serves www with its own certificate), and at
+Cloudflare the four apex A records set to Proxied plus a Page Rule
+settleverify.com/* -> 301 -> https://www.settleverify.com/$1 (path preserved).
+The redirect executes at Cloudflare's edge and never contacts GitHub, so the
+missing apex vhost is irrelevant. Verified live: apex / and /releases/ return
+301 to the www equivalents; www returns 200; both handshakes hold valid
+certificates. Inbound mail path verified unchanged (DMARC aggregate reports
+continued arriving at the rua address through the change window).
+
+Reviewer bounce, logged per protocol: on 2 Oct the reviewer ruled a fallback of
+orange-clouding the apex to GitHub behind Cloudflare SSL/TLS "Full" mode.
+Surface evidence (reset before any certificate was offered) showed GitHub's
+edge offers no TLS for the apex at all; the fallback would have failed at the
+origin handshake. The reviewer accepted the correction and substituted the
+edge-redirect plan above. The bounce belongs to the reviewer; the surface
+observation that caught it is recorded here.
+
+Gate change, effective 2026-10-03: after any hosting or DNS change, verify BOTH
+https://settleverify.com/ and https://www.settleverify.com/ return 200, or a
+301 whose target returns 200, each with a valid certificate.
