@@ -93,3 +93,11 @@ observation that caught it is recorded here.
 Gate change, effective 2026-10-03: after any hosting or DNS change, verify BOTH
 https://settleverify.com/ and https://www.settleverify.com/ return 200, or a
 301 whose target returns 200, each with a valid certificate.
+
+## Entry 14 — 2026-10-04 — v2 Flask gate boundary error: "unread interval between verified endpoints"
+
+On 2026-09-15 this ledger and the draft settlement-gating note claimed the v2 Flask settle gate was 2xx-only for all releases `>= 2.0.0, < 2.15.0` and called the boundary map "exhaustive". The claim rested on read endpoints — 2.0.0, 2.10.0, and 2.15.0 — with the releases in between unread. In fact the gate widened to <400 at 2.11.0 (PR #2388, merged 2026-05-20); PR #2826 (2.15.0) fixed a main-branch regression of the same guard that did not reach a shipped release. Error class: unread interval between verified endpoints — the class the bounty all-files rule was written to prevent. Caught by the 2026-10-03/04 backlog verification, nineteen days after the claim.
+
+Correction (4 Oct 2026): the v2 Flask settlement gate widened from 2xx-only to <400 at release 2.11.0 (PR #2388, merged 20 May 2026), not at 2.15.0 as previously stated; PR #2826 (2.15.0) fixed a main-branch regression of the same guard that did not reach a shipped release. Affected range for the 2xx-only Flask gate: >= 2.0.0, < 2.11.0. Verified wheel-by-wheel; see Ledger rows 2.11.0-2.15.0.
+
+Errata applied in this push: rows 2.13.0, 2.13.1, 2.14.0 upgraded bracket-inferred -> verified (direct wheel read 2026-10-04); row 2.15.0 carries an appended erratum (row body unchanged); the same dated correction ships in scanner v0.3, upstream PR #3471 (settle-gating-tests branch), and the draft settlement-gating note (settle-gating-note branch). Remaining exposures per reviewer list: procurement checklist M1, report 001 citations, website Assessments/Home copy, x402-rs disclosure text.
